@@ -1,0 +1,33 @@
+import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import Signup from './pages/Register/Signup';
+import Profile from './pages/Profile/Profile';
+import Checkout from './pages/Checkout/Checkout';
+import Cart from './pages/Cart/Cart';
+import Navbar from './components/Navbar/Navbar';
+import Product from './pages/Product/ProductView';
+
+
+function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route Component={Home} path='/' />
+          <Route Component={Product} path='/product/:id/'/>
+          <Route Component={Login} path='/login/' />
+          <Route Component={Signup} path='/signup/' />
+          <Route Component={Profile} path='/profile/:username/' />
+          <Route Component={Checkout} path='/checkout/'/>
+          <Route Component={Cart} path='/cart/'/>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
